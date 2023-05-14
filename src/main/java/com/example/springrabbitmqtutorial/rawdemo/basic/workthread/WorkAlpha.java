@@ -10,7 +10,7 @@ import com.rabbitmq.client.DeliverCallback;
  * @author Administrator
  */
 public class WorkAlpha {
-    public static final String QUEUE_NAME = "hello";
+    public static final String QUEUE_NAME = "45fd707c-4af8-46dc-8978-9684d36965dc";
 
     public static void main(String[] args) {
         DeliverCallback deliverCallback = (consumerTag,message) -> System.out.println(new String(message.getBody()));

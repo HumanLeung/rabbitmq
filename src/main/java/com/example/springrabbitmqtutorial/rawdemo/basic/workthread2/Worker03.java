@@ -14,7 +14,7 @@ import java.util.concurrent.TimeoutException;
  */
 public class Worker03 {
 
-    public static final String TASK_QUEUE_NAME = "ack_queue";
+    public static final String TASK_QUEUE_NAME = "45fd707c-4af8-46dc-8978-9684d36965dc";
 
 
     public static void main(String[] args) throws IOException, TimeoutException {
@@ -23,7 +23,7 @@ public class Worker03 {
             Channel channel = RabbitmqUtils.getChannel();
             DeliverCallback deliverCallback = (consumerTag, message) -> {
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
