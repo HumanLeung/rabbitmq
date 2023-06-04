@@ -18,7 +18,7 @@ public class RabbitmqUtils {
         ConnectionFactory factor = new ConnectionFactory();
         factor.setHost("146.190.102.94");
         factor.setUsername("admin");
-        factor.setPassword("123456");
+        factor.setPassword("qq123456");
         return factor.newConnection();
     }
 
