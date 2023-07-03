@@ -1,7 +1,9 @@
 package com.example.springrabbitmqtutorial.springdemo.service;
 
+import cn.hutool.core.date.DateUtil;
 import cn.hutool.json.JSONUtil;
 import com.example.springrabbitmqtutorial.springdemo.callback.OrderCallback;
+import com.example.springrabbitmqtutorial.springdemo.config.RabbitMQConfig;
 import com.example.springrabbitmqtutorial.springdemo.entity.OrderEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -51,5 +53,11 @@ public class OrderService {
         order.setOrderCode("SOD123125235434");
         order.setReceiver("John Wick");
         return JSONUtil.toJsonStr(order);
+    }
+    public void createOrderIn10() throws InterruptedException {
+
+        rabbitTemplate.convertAndSend(RabbitMQConfig.ORDER_EXCHANGE, "order", "测试订单延迟");
+        System.out.println("发送消息：" + DateUtil.now());
+        Thread.sleep(10000);
     }
 }

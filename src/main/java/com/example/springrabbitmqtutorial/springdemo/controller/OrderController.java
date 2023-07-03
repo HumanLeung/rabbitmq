@@ -22,4 +22,9 @@ public class OrderController {
         orderService.createOrder();
         orderService.createTopicOrder();
     }
+
+    @GetMapping("/sendOrder")
+    public void sendOrder() throws InterruptedException {
+        orderService.createOrderIn10();
+    }
 }
